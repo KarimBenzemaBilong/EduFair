@@ -1,0 +1,383 @@
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+
+:root {
+    --primary: #102A56;
+    --secondary: #1D477E;
+    --background: #F5F7FA;
+    --white: #FFFFFF;
+    --accent: #D2B40C;
+    --text: #26364D;
+    --muted: #68778C;
+    --border: #E3E8EF;
+    --success: #18794E;
+    --danger: #C0392B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   2. HEADER
+========================= */
+
+.admin-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.brand span {
+    color: var(--secondary);
+}
+
+.admin-label {
+    background: #EAF0F8;
+    color: var(--primary);
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   3. JUDUL HALAMAN
+========================= */
+
+.admin-main {
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+.section-label {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.page-heading h1 {
+    color: var(--primary);
+    font-size: 34px;
+    margin: 5px 0;
+}
+
+.page-heading > p:last-child {
+    color: var(--muted);
+}
+
+
+/* =========================
+   4. PANEL
+========================= */
+
+.panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.panel-heading h2 {
+    color: var(--primary);
+    font-size: 19px;
+}
+
+.panel-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   5. UPLOAD CSV
+========================= */
+
+.upload-area {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: var(--background);
+    border: 1px dashed #AAB8CC;
+    border-radius: 9px;
+    padding: 20px;
+}
+
+#fileCSV {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#fileCSV:focus-visible + .upload-label {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 11px 17px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.upload-label:hover {
+    background: var(--secondary);
+}
+
+.upload-label span {
+    font-size: 19px;
+}
+
+#fileName {
+    color: var(--muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.help-text {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.status-message {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.status-message.success {
+    color: var(--success);
+}
+
+.status-message.error {
+    color: var(--danger);
+}
+
+
+/* =========================
+   6. STATISTIK
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    color: var(--primary);
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   7. TABEL
+========================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+    text-align: left;
+}
+
+th {
+    background: var(--background);
+    color: var(--primary);
+    font-size: 12px;
+    padding: 14px;
+}
+
+td {
+    border-bottom: 1px solid var(--border);
+    padding: 14px;
+    font-size: 13px;
+}
+
+.empty-data {
+    text-align: center;
+    color: var(--muted);
+    padding: 30px;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 6px;
+    padding: 9px 13px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-outline {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--background);
+}
+
+.btn-whatsapp {
+    background: #E8F5EC;
+    color: #18794E;
+    white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+    background: #D6EDDD;
+}
+
+.btn-whatsapp:focus-visible,
+.btn-outline:focus-visible,
+.upload-label:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.btn-whatsapp.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.table-heading {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   8. FOOTER
+========================= */
+
+.back-link {
+    margin-top: 30px;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--primary);
+    color: #D9E2F0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   9. RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+    .admin-main {
+        padding-top: 30px;
+    }
+
+    .page-heading h1 {
+        font-size: 28px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .upload-area {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

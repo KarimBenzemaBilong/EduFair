@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel admin undangan Edu Fair 2026.">
+  <title>Admin | Edu Fair 2026</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+
+<body>
+
+  <header class="admin-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand">EDU<span>FAIR.</span></a>
+      <span class="admin-label">ADMIN PANEL</span>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+
+    <div class="page-heading">
+      <p class="section-label">MANAJEMEN UNDANGAN</p>
+      <h1>Daftar Tamu</h1>
+      <p>
+        Kelola data penerima dan buat undangan
+        personal melalui WhatsApp.
+      </p>
+    </div>
+
+    <!-- Import CSV -->
+    <section class="panel">
+
+      <div class="panel-heading">
+        <div>
+          <h2>Import Data Tamu</h2>
+          <p>Unggah file data-tamu.csv untuk menampilkan data.</p>
+        </div>
+      </div>
+
+      <div class="upload-area">
+
+        <input type="file" id="fileCSV" accept=".csv,text/csv" aria-label="Pilih file data tamu CSV">
+
+        <label for="fileCSV" class="upload-label">
+          <span>↑</span>
+          Pilih File CSV
+        </label>
+
+        <span id="fileName">Belum ada file dipilih</span>
+      </div>
+
+      <p class="help-text" id="csvHelp">
+        Format kolom: id, nama_tamu, instansi, kategori, no_whatsapp.
+        Maksimal ukuran file 1 MB dan 500 data tamu.
+      </p>
+
+      <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
+
+    </section>
+
+    <!-- Statistik -->
+    <section class="stats-grid">
+
+      <article class="stat-card">
+        <p>Total Tamu</p>
+        <h2 id="totalTamu">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Data Valid</p>
+        <h2 id="dataValid">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Data Bermasalah</p>
+        <h2 id="dataError">0</h2>
+      </article>
+
+    </section>
+
+    <!-- Tabel -->
+    <section class="panel">
+
+      <div class="panel-heading table-heading">
+        <div>
+          <h2>Data Penerima Undangan</h2>
+          <p>Daftar instansi yang akan menerima undangan.</p>
+        </div>
+
+        <button id="resetButton" class="btn btn-outline">
+          Reset Data
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama Tamu</th>
+              <th>Instansi</th>
+              <th>Kategori</th>
+              <th>WhatsApp</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelTamu">
+            <tr>
+              <td colspan="6" class="empty-data">
+                Silakan unggah file CSV terlebih dahulu.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <div class="back-link">
+      <a href="index.html">← Kembali ke halaman undangan</a>
+    </div>
+
+  </main>
+
+
+
+  <footer class="footer">
+    <p>
+      Edu Fair & Career Day 2026
+    </p>
+
+    <p class="footer-note">
+      Website ini dibuat sebagai proyek tugas praktik RPL
+      dan bukan merupakan website resmi SMKN 6 Kota Tangerang Selatan.
+    </p>
+
+    <p class="footer-copyright">
+      &copy; 2026 | Karim Benzema Bilong. All right reserved
+    </p>
+  </footer>
+
+
+
+</body>
+
+</html>
